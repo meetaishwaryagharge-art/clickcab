@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Cab Services - Your Journey, Our Priority</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-gold: #f5b700;
+            --dark-bg: #0b0c10;
+            --text-muted:  #e0e0e0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9faea;
+            overflow-x: hidden;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: rgba(11, 12, 16, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+        }
+        .navbar-brand img {
+            height: 40px;
+        }
+        .nav-link {
+            color: #ffffff !important;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-gold) !important;
+        }
+        .support-phone {
+            color: #ffffff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .support-icon {
+            background-color: var(--primary-gold);
+            color: #000;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=1920&auto=format&fit=crop') no-repeat center center;
+            background-size: cover;
+            min-height: 80vh;
+            padding: 140px 0 180px 0;
+            color: #ffffff;
+            position: relative;
+        }
+        .hero-tagline {
+            color: var(--primary-gold);
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .hero-title span {
+            color: var(--primary-gold);
+        }
+        .hero-desc {
+            color: #e0e0e0;
+            max-width: 500px;
+            font-size: 1.05rem;
+        }
+
+        /* Features */
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .feature-icon {
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .feature-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        .feature-sub {
+            font-size: 0.8rem;
+            color:  #dfefebfc;
+        }
+
+        /* Booking Widget */
+        .booking-container {
+            margin-top: -100px;
+            position: relative;
+            z-index: 10;
+            padding-bottom: 60px;
+        }
+        .booking-card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            overflow: hidden;
+            border: none;
+        }
+        
+        /* Custom Tabs */
+        .booking-tabs {
+            border-bottom: 1px solid #eee;
+            background-color: #fafafa;
+        }
+        .booking-tab-btn {
+            background: none;
+            border: none;
+            padding: 20px 30px;
+            font-weight: 600;
+            color: #495057;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            transition: all 0.3s;
+        }
+        .booking-tab-btn i {
+            font-size: 1.2rem;
+        }
+        .booking-tab-btn.active {
+            color: #000;
+            background-color: #ffffff;
+        }
+        .booking-tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-gold);
+        }
+
+        /* Form Inputs */
+        .form-label-custom {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .input-group-custom {
+            position: relative;
+        }
+        .input-group-custom .form-control,
+        .input-group-custom .form-select {
+            padding: 12px 12px 12px 35px;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+        .input-group-custom .form-control:focus,
+        .input-group-custom .form-select:focus {
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 0.2rem rgba(245, 183, 0, 0.15);
+        }
+        .input-group-custom .field-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 5;
+            font-size: 1rem;
+        }
+        .icon-pickup { color: #198754; }
+        .icon-drop { color: #dc3545; }
+        .icon-generic { color: #6c757d; }
+
+        .btn-search {
+            background-color: var(--primary-gold);
+            color: #000000;
+            font-weight: 600;
+            padding: 14px;
+            border-radius: 8px;
+            border: none;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        .btn-search:hover {
+            background-color: #e0a600;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 991.98px) {
+            .hero-section {
+                padding: 100px 0 140px 0;
+                text-align: center;
+                background-position: 75% center;
+            }
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .hero-desc {
+                margin: 0 auto;
+            }
+            .features-wrapper {
+                justify-content: center !important;
+                gap: 20px;
+            }
+            .feature-item {
+                align-items: center;
+            }
+            .booking-tab-btn {
+                padding: 15px 15px;
+                font-size: 0.9rem;
+                flex: 1;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <div class="text-white fw-bold fs-4 d-flex align-items-center gap-2">
+                    <span class="text-warning"><i class="bi bi-shield-car"></i></span> Premium <span class="fs-6 fw-light style Color: #e0e0e0; d-none d-sm-inline">| CAB SERVICES</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Outstation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Airport Transfer</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Local Rental</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Corporate</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Tour Packages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a href="tel:+919876543210" class="support-phone">
+                        <div class="support-icon">
+                            <i class="bi bi-telephone-fill"></i>
+                        </div>
+                        <div class="d-none d-xl-block">
+                            <small class="d-block" style="font-size: 0.75rem; line-height: 1;">24x7 Customer Support</small>
+                            <span class="fw-bold" style="font-size: 0.95rem;">+91 98765 43210</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <span class="hero-tagline d-block mb-2">Safe. Reliable. On-time.</span>
+                    <h1 class="hero-title mb-3">Your Journey,<br><span>Our Priority</span></h1>
+                    <p class="hero-desc mb-5">Experience comfortable and affordable rides with our premium cab services.</p>
+                    
+                    <div class="d-flex flex-wrap gap-4 features-wrapper">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="bi bi-clock"></i></div>
+                            <span class="feature-title">24x7</span>
+                            <span class="feature-sub">Available</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="bi bi-person-check"></i></div>
+                            <span class="feature-title">Verified</span>
+                            <span class="feature-sub">Drivers</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="bi bi-stopwatch"></i></div>
+                            <span class="feature-title">On-time</span>
+                            <span class="feature-sub">Pickup</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="bi bi-tags"></i></div>
+                            <span class="feature-title">Best</span>
+                            <span class="feature-sub">Prices</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container booking-container">
+        <div class="row justify-content-center">
+            <div class="col-11 col-lg-12 booking-card">
+                <div class="booking-tabs d-flex">
+                    <button class="booking-tab-btn active" onclick="switchTab('one-way')">
+                        <i class="bi bi-car-front"></i> One Way / Round Trip
+                    </button>
+                    <button class="booking-tab-btn" onclick="switchTab('airport')">
+                        <i class="bi bi-airplane"></i> Airport Transfer
+                    </button>
+                    <button class="booking-tab-btn" onclick="switchTab('local')">
+                        <i class="bi bi-geo-alt"></i> Local Rental
+                    </button>
+                </div>
+
+                <div class="p-4">
+                    <form id="bookingForm" onsubmit="handleFormSubmit(event)">
+                        <div class="row g-3">
+                            <div class="col-md-6 col-lg-3">
+                                <label class="form-label-custom">Pickup Location</label>
+                                <div class="input-group-custom">
+                                    <i class="bi bi-circle-fill field-icon icon-pickup"></i>
+                                    <input type="text" class="form-control" placeholder="Enter pickup location" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-3" id="dropLocationContainer">
+                                <label class="form-label-custom">Drop Location</label>
+                                <div class="input-group-custom">
+                                    <i class="bi bi-circle-fill field-icon icon-drop"></i>
+                                    <input type="text" class="form-control" placeholder="Enter drop location" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-lg-2">
+                                <label class="form-label-custom">Journey Date</label>
+                                <div class="input-group-custom">
+                                    <i class="bi bi-calendar3 field-icon icon-generic"></i>
+                                    <input type="date" class="form-control" id="journeyDate" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-lg-2">
+                                <label class="form-label-custom">Time</label>
+                                <div class="input-group-custom">
+                                    <i class="bi bi-clock field-icon icon-generic"></i>
+                                    <select class="form-select" id="journeyTime">
+                                        <option value="10:00 AM">10:00 AM</option>
+                                        <option value="12:00 PM">12:00 PM</option>
+                                        <option value="02:00 PM">02:00 PM</option>
+                                        <option value="04:00 PM">04:00 PM</option>
+                                        <option value="06:00 PM">06:00 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-lg-2">
+                                <label class="form-label-custom">Passengers</label>
+                                <div class="input-group-custom">
+                                    <i class="bi bi-people field-icon icon-generic"></i>
+                                    <select class="form-select">
+                                        <option value="1">1 Passenger</option>
+                                        <option value="2">2 Passengers</option>
+                                        <option value="3">3 Passengers</option>
+                                        <option value="4+">4+ Passengers</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-3 mt-lg-4">
+                                <label class="form-label-custom d-lg-none">Cab Type</label>
+                                <div class="input-group-custom">
+                                    <i class="bi bi-suv-front field-icon icon-generic"></i>
+                                    <select class="form-select">
+                                        <option value="all">All Cars</option>
+                                        <option value="sedan">Premium Sedan</option>
+                                        <option value="suv">Luxury SUV</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-9 mt-lg-4 d-flex align-items-end">
+                                <button type="submit" class="btn-search">Search Cabs</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Set dynamic modern placeholder date (System Date auto-filler)
+        document.addEventListener("DOMContentLoaded", () => {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('journeyDate').value = today;
+        });
+
+        // Interactive tab switching mechanic
+        function switchTab(type) {
+            // Update Active Buttons
+            const buttons = document.querySelectorAll('.booking-tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            // Form configuration updates dynamically based on requirements
+            const dropContainer = document.getElementById('dropLocationContainer');
+            const dropInput = dropContainer.querySelector('input');
+
+            if (type === 'local') {
+                dropInput.removeAttribute('required');
+                dropContainer.style.opacity = '0.5';
+                dropInput.disabled = true;
+                dropInput.placeholder = "Not required for local rentals";
+            } else {
+                dropInput.setAttribute('required', 'required');
+                dropContainer.style.opacity = '1';
+                dropInput.disabled = false;
+                dropInput.placeholder = "Enter drop location";
+            }
+        }
+
+        // Form submission capture event handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            alert('Searching for available premium vehicles matching your criteria...');
+        }
+    </script>
+    <!-- Why Choose Us Section -->
+<section class="why-choose-us-section py-5 bg-white">
+    <div class="container">
+        <div class="row align-items-center g-4">
+            
+            <!-- Left Side Content Column -->
+            <div class="col-xl-4 col-lg-5 text-center text-lg-start">
+                <span class="text-uppercase fw-semibold tracking-wider text-gold small d-block mb-2">Why Choose Us</span>
+                <h2 class="fw-bold text-dark lh-sm mb-3 fs-1">
+                    Travel with Comfort,<br class="d-none d-md-block"> Safety & Peace of Mind
+                </h2>
+                <p class="text-muted fs-6 mb-0 pe-xl-4">
+                    We are committed to providing the best travel experience with professional drivers and well-maintained vehicles.
+                </p>
+            </div>
+            
+            <!-- Right Side Cards Column -->
+            <div class="col-xl-8 col-lg-7">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 justify-content-center">
+                    
+                    <!-- Card 1: Clean & Sanitized Cabs -->
+                    <div class="col">
+                        <div class="feature-card text-center p-4 h-100">
+                            <div class="icon-wrapper mb-3">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+                            <h3 class="fw-bold text-dark mb-2">Clean & Sanitized Cabs</h3>
+                            <p class="text-muted small mb-0">Well-maintained and hygienic vehicles</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2: Professional Drivers -->
+                    <div class="col">
+                        <div class="feature-card text-center p-4 h-100">
+                            <div class="icon-wrapper mb-3">
+                                <i class="bi bi-person-badge"></i>
+                            </div>
+                            <h3 class="fw-bold text-dark mb-2">Professional Drivers</h3>
+                            <p class="text-muted small mb-0">Experienced, verified & courteous drivers</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 3: Transparent Pricing -->
+                    <div class="col">
+                        <div class="feature-card text-center p-4 h-100">
+                            <div class="icon-wrapper mb-3">
+                                <i class="bi bi-tags"></i>
+                            </div>
+                            <h3 class="fw-bold text-dark mb-2">Transparent Pricing</h3>
+                            <p class="text-muted small mb-0">No hidden charges, 100% transparent</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 4: 24x7 Customer Support -->
+                    <div class="col">
+                        <div class="feature-card text-center p-4 h-100">
+                            <div class="icon-wrapper mb-3">
+                                <i class="bi bi-headset"></i>
+                            </div>
+                            <h3 class="fw-bold text-dark mb-2">24x7 Customer Support</h3>
+                            <p class="text-muted small mb-0">We are here to assist you anytime</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Custom Component Styles -->
+<style>
+    /* Styling variables matching the premium palette */
+    :root {
+        --brand-gold: #f5b700;
+        --soft-gold-bg: #fdf8e6;
+        --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        --card-radius: 14px;
+    }
+
+    .why-choose-us-section {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .text-gold {
+        color: var(--brand-gold);
+        letter-spacing: 0.05em;
+    }
+
+    /* Feature Cards Styling */
+    .feature-card {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.02);
+        border-radius: var(--card-radius);
+        box-shadow: var(--card-shadow);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    }
+
+    .feature-card h3 {
+        font-size: 0.95rem;
+        line-height: 1.3;
+    }
+
+    .feature-card p {
+        font-size: 0.8rem !important;
+        line-height: 1.4;
+    }
+
+    /* Icon Accent Circles */
+    .icon-wrapper {
+        width: 54px;
+        height: 54px;
+        background-color: var(--soft-gold-bg);
+        color: #bfa136;
+        font-size: 1.4rem;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+</style>
+<!-- Popular Services Section -->
+<section class="popular-services-section py-5 bg-white">
+    <div class="container">
+        <div class="text-center mb-4">
+            <span class="text-uppercase fw-semibold tracking-wider text-gold small d-block mb-1">Popular Services</span>
+            <h2 class="fw-bold text-dark section-title">Solutions for Every Travel Need</h2>
+        </div>
+        
+        <!-- Services Grid -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3 justify-content-center">
+            
+            <!-- Service 1 -->
+            <div class="col">
+                <div class="service-card h-100">
+                    <div class="service-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=600&auto=format&fit=crop" class="service-img" alt="Outstation Cabs">
+                    </div>
+                    <div class="service-body p-3">
+                        <div class="d-flex gap-2 align-items-start">
+                            <div class="service-icon-mini"><i class="bi bi-geo-alt"></i></div>
+                            <div>
+                                <h3 class="service-name mb-1">Outstation Cabs</h3>
+                                <p class="service-desc mb-0">One way & round trip to any city</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="col">
+                <div class="service-card h-100">
+                    <div class="service-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=600&auto=format&fit=crop" class="service-img" alt="Airport Transfers">
+                    </div>
+                    <div class="service-body p-3">
+                        <div class="d-flex gap-2 align-items-start">
+                            <div class="service-icon-mini"><i class="bi bi-airplane"></i></div>
+                            <div>
+                                <h3 class="service-name mb-1">Airport Transfers</h3>
+                                <p class="service-desc mb-0">Timely pickup & drop to all airports</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="col">
+                <div class="service-card h-100">
+                    <div class="service-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=600&auto=format&fit=crop" class="service-img" alt="Local Rentals">
+                    </div>
+                    <div class="service-body p-3">
+                        <div class="d-flex gap-2 align-items-start">
+                            <div class="service-icon-mini"><i class="bi bi-clock-history"></i></div>
+                            <div>
+                                <h3 class="service-name mb-1">Local Rentals</h3>
+                                <p class="service-desc mb-0">Hourly, daily & monthly rental services</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="col">
+                <div class="service-card h-100">
+                    <div class="service-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1557223562-6c77ef16210f?q=80&w=600&auto=format&fit=crop" class="service-img" alt="Corporate Travel">
+                    </div>
+                    <div class="service-body p-3">
+                        <div class="d-flex gap-2 align-items-start">
+                            <div class="service-icon-mini"><i class="bi bi-building"></i></div>
+                            <div>
+                                <h3 class="service-name mb-1">Corporate Travel</h3>
+                                <p class="service-desc mb-0">Reliable travel partner for businesses</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="col">
+                <div class="service-card h-100">
+                    <div class="service-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600&auto=format&fit=crop" class="service-img" alt="Tour Packages">
+                    </div>
+                    <div class="service-body p-3">
+                        <div class="d-flex gap-2 align-items-start">
+                            <div class="service-icon-mini"><i class="bi bi-compass"></i></div>
+                            <div>
+                                <h3 class="service-name mb-1">Tour Packages</h3>
+                                <p class="service-desc mb-0">Customized tours for a memorable experience</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="how-it-works-section py-5 bg-white border-top">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="text-uppercase fw-semibold tracking-wider text-gold small d-block mb-1">How It Works</span>
+            <h2 class="fw-bold text-dark section-title">Simple Steps to Book Your Ride</h2>
+        </div>
+
+        <!-- Steps Timeline Wrapper -->
+        <div class="row g-4 justify-content-center timeline-container">
+            
+            <!-- Step 1 -->
+            <div class="col-sm-6 col-lg-3 timeline-item">
+                <div class="text-center px-3 position-relative">
+                    <div class="step-badge-wrapper mx-auto mb-3">
+                        <span class="step-number">1</span>
+                        <div class="step-icon-circle">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                    </div>
+                    <h3 class="step-title fw-bold text-dark mb-2">Enter Your Details</h3>
+                    <p class="step-desc text-muted mx-auto">Provide trip & passenger information</p>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="col-sm-6 col-lg-3 timeline-item">
+                <div class="text-center px-3 position-relative">
+                    <div class="step-badge-wrapper mx-auto mb-3">
+                        <span class="step-number">2</span>
+                        <div class="step-icon-circle">
+                            <i class="bi bi-calendar3"></i>
+                        </div>
+                    </div>
+                    <h3 class="step-title fw-bold text-dark mb-2">Choose Your Ride</h3>
+                    <p class="step-desc text-muted mx-auto">Select the car that suits your needs</p>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="col-sm-6 col-lg-3 timeline-item">
+                <div class="text-center px-3 position-relative">
+                    <div class="step-badge-wrapper mx-auto mb-3">
+                        <span class="step-number">3</span>
+                        <div class="step-icon-circle">
+                            <i class="bi bi-credit-card-2-front"></i>
+                        </div>
+                    </div>
+                    <h3 class="step-title fw-bold text-dark mb-2">Confirm & Pay</h3>
+                    <p class="step-desc text-muted mx-auto">Secure your booking with easy payment</p>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="col-sm-6 col-lg-3 timeline-item">
+                <div class="text-center px-3 position-relative">
+                    <div class="step-badge-wrapper mx-auto mb-3">
+                        <span class="step-number">4</span>
+                        <div class="step-icon-circle">
+                            <i class="bi bi-car-front-fill"></i>
+                        </div>
+                    </div>
+                    <h3 class="step-title fw-bold text-dark mb-2">Enjoy Your Ride</h3>
+                    <p class="step-desc text-muted mx-auto">Travel safely with our professional drivers</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Custom Styles Document -->
+<style>
+    :root {
+        --brand-gold: #f5b700;
+        --soft-gold-bg: #fdf8e6;
+        --card-radius: 12px;
+        --card-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    }
+
+    .section-title {
+        font-size: 1.85rem;
+    }
+
+    /* Popular Services Styles */
+    .service-card {
+        background: #ffffff;
+        border: 1px solid rgba(0,0,0,0.03);
+        border-radius: var(--card-radius);
+        box-shadow: var(--card-shadow);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+    .service-card:hover {
+        transform: translateY(-4px);
+    }
+    .service-img-wrapper {
+        height: 110px;
+        overflow: hidden;
+        background-color: #f1f1f1;
+    }
+    .service-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .service-icon-mini {
+        width: 28px;
+        height: 28px;
+        background-color: var(--soft-gold-bg);
+        color: #bfa136;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.85rem;
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+    .service-name {
+        font-size: 0.92rem;
+        font-weight: 700;
+        color: #212529;
+    }
+    .service-desc {
+        font-size: 0.78rem;
+        color: #6c757d;
+        line-height: 1.3;
+    }
+
+    /* How It Works Flow Styles */
+    .step-badge-wrapper {
+        width: 75px;
+        height: 75px;
+        position: relative;
+    }
+    .step-number {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: var(--brand-gold);
+        color: #000;
+        font-size: 0.75rem;
+        font-weight: 700;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+    }
+    .step-icon-circle {
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+        border-radius: 50%;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+        border: 1px solid rgba(0,0,0,0.01);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.6rem;
+        color: #33363f;
+    }
+    .step-title {
+        font-size: 1rem;
+    }
+    .step-desc {
+        font-size: 0.82rem;
+        max-width: 180px;
+        line-height: 1.4;
+    }
+
+    /* CSS Connected Dots Line on Desktop view */
+    @media (min-width: 992px) {
+        .timeline-item:not(:last-child) .step-badge-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 110%;
+            width: 100%;
+            border-top: 2px dashed #e2e8f0;
+            z-index: 1;
+            transform: translateY(-50%);
+        }
+    }
+</style>
+<section class="testimonials-section py-5 bg-dark-custom text-white position-relative overflow-hidden">
+    <div class="container py-3">
+        <div class="row align-items-center g-4">
+            
+            <!-- Left Info Panel -->
+            <div class="col-xl-4 col-lg-5 position-relative z-3">
+                <span class="text-uppercase fw-semibold tracking-wider text-gold small d-block mb-1">What Our Customers Say</span>
+                <h2 class="fw-bold lh-sm mb-4 fs-2">Trusted by Thousands<br>of Happy Customers</h2>
+                <div class="d-flex align-items-center gap-3 mb-4">
+                    <span class="display-5 fw-bold text-white m-0">4.8<span class="fs-5  fw-normal">/5</span></span>
+                    <div>
+                        <div class="text-gold fs-5 mb-1">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class=" small mb-0">Based on 1200+ reviews</p>
+                    </div>
+                </div>
+                <!-- Interactive Action Mode Arrows & Dots Indicators -->
+                <div class="d-flex align-items-center gap-3 mt-4">
+                    <div class="d-flex gap-2">
+                        <button class="nav-arrow-btn" id="prevBtn" onclick="slideTestimonials('left')" aria-label="Previous slide">
+                            <i class="bi bi-arrow-left"></i>
+                        </button>
+                        <button class="nav-arrow-btn" id="nextBtn" onclick="slideTestimonials('right')" aria-label="Next slide">
+                            <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div class="d-flex gap-2 ms-2" id="dotsContainer">
+                        <!-- Generated dynamically by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Slider Carousel Track Wrapper -->
+            <div class="col-xl-8 col-lg-7 position-relative">
+                <div class="testimonial-slider-viewport">
+                    <div class="testimonial-slider-track" id="testimonialTrack">
+                        
+                        <!-- Card 1: Rahul -->
+                        <div class="testimonial-slide-item">
+                            <div class="review-card p-4 h-100 d-flex flex-column justify-content-between">
+                                <div>
+                                    <i class="bi bi-quote fs-1 quote-icon d-block mb-2"></i>
+                                    <p class="review-text small mb-4">"Excellent service! The driver was punctual and the car was very comfortable. Highly recommend!"</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between pt-3 border-top border-secondary-subtle">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop" class="user-avatar" alt="Rahul Sharma">
+                                        <div>
+                                            <h4 class="user-name small fw-bold mb-0">Rahul Sharma</h4>
+                                            <span class="user-location ">Mumbai</span>
+                                        </div>
+                                    </div>
+                                    <div class="text-gold star-rating-mini"><i class="bi bi-star-fill"></i> 5.0</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Priya -->
+                        <div class="testimonial-slide-item">
+                            <div class="review-card p-4 h-100 d-flex flex-column justify-content-between">
+                                <div>
+                                    <i class="bi bi-quote fs-1 quote-icon d-block mb-2"></i>
+                                    <p class="review-text small mb-4">"Very professional and reliable service. Used for airport transfer and it was a smooth experience."</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between pt-3 border-top border-secondary-subtle">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop" class="user-avatar" alt="Priya Mehta">
+                                        <div>
+                                            <h4 class="user-name small fw-bold mb-0">Priya Mehta</h4>
+                                            <span class="user-location ">Bangalore</span>
+                                        </div>
+                                    </div>
+                                    <div class="text-gold star-rating-mini"><i class="bi bi-star-fill"></i> 5.0</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Amit -->
+                        <div class="testimonial-slide-item">
+                            <div class="review-card p-4 h-100 d-flex flex-column justify-content-between">
+                                <div>
+                                    <i class="bi bi-quote fs-1 quote-icon d-block mb-2"></i>
+                                    <p class="review-text small mb-4">"Booked an outstation cab and the journey was very comfortable. Will book again."</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between pt-3 border-top border-secondary-subtle">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100&auto=format&fit=crop" class="user-avatar" alt="Amit Verma">
+                                        <div>
+                                            <h4 class="user-name small fw-bold mb-0">Amit Verma</h4>
+                                            <span class="user-location ">Delhi</span>
+                                        </div>
+                                    </div>
+                                    <div class="text-gold star-rating-mini"><i class="bi bi-star-fill"></i> 5.0</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: Sunita (New Card) -->
+                        <div class="testimonial-slide-item">
+                            <div class="review-card p-4 h-100 d-flex flex-column justify-content-between">
+                                <div>
+                                    <i class="bi bi-quote fs-1 quote-icon d-block mb-2"></i>
+                                    <p class="review-text small mb-4">"My family had a wonderful tour package. The driver was knowledgeable and friendly. The vehicle was spotless!"</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between pt-3 border-top border-secondary-subtle">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=100&auto=format&fit=crop" class="user-avatar" alt="Sunita Patel">
+                                        <div>
+                                            <h4 class="user-name small fw-bold mb-0">Sunita Patel</h4>
+                                            <span class="user-location ">Pune</span>
+                                        </div>
+                                    </div>
+                                    <div class="text-gold star-rating-mini"><i class="bi bi-star-fill"></i> 5.0</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 5: David (New Card) -->
+                        <div class="testimonial-slide-item">
+                            <div class="review-card p-4 h-100 d-flex flex-column justify-content-between">
+                                <div>
+                                    <i class="bi bi-quote fs-1 quote-icon d-block mb-2"></i>
+                                    <p class="review-text small mb-4">"Incredibly efficient. I used their local rental services for a full day of client meetings, and they exceeded all expectations."</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between pt-3 border-top border-secondary-subtle">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop" class="user-avatar" alt="David Chen">
+                                        <div>
+                                            <h4 class="user-name small fw-bold mb-0">David Chen</h4>
+                                            <span class="user-location ">Corporate Fleet</span>
+                                        </div>
+                                    </div>
+                                    <div class="text-gold star-rating-mini"><i class="bi bi-star-fill"></i> 4.9</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 6: Ananya (New Card) -->
+                        <div class="testimonial-slide-item">
+                            <div class="review-card p-4 h-100 d-flex flex-column justify-content-between">
+                                <div>
+                                    <i class="bi bi-quote fs-1 quote-icon d-block mb-2"></i>
+                                    <p class="review-text small mb-4">"Perfect airport transfer booking process. Even with a delayed late-night flight, my driver was waiting. A true life-saver."</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between pt-3 border-top border-secondary-subtle">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=100&auto=format&fit=crop" class="user-avatar" alt="Ananya Iyer">
+                                        <div>
+                                            <h4 class="user-name small fw-bold mb-0">Ananya Iyer</h4>
+                                            <span class="user-location ">Chennai</span>
+                                        </div>
+                                    </div>
+                                    <div class="text-gold star-rating-mini"><i class="bi bi-star-fill"></i> 5.0</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+                <!-- Floating Action Arrow Indicator on Right Edge -->
+                <button class="floating-inline-arrow d-none d-md-flex" onclick="slideTestimonials('right')" aria-label="Next slide forward">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Main Layout Background Colors */
+    .bg-dark-custom {
+        background-color: #0b0c10 !important;
+    }
+    .text-gold {
+        color: #f5b700 !important;
+    }
+
+    /* Interactive Action Mode Controls */
+    .nav-arrow-btn {
+        width: 44px;
+        height: 44px;
+        background: #12141c;
+        border: 2px solid #222533;
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease-in-out;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    .nav-arrow-btn:hover {
+        background: #f5b700;
+        color: #000;
+        border-color: #f5b700;
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(245, 183, 0, 0.4);
+    }
+    .nav-arrow-btn:active {
+        transform: scale(0.95);
+    }
+
+    /* Floating Peek Arrow Indicator */
+    .floating-inline-arrow {
+        position: absolute;
+        right: -20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 48px;
+        height: 48px;
+        background: rgba(18, 20, 28, 0.85);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(4px);
+        color: #ffffff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        z-index: 5;
+        transition: all 0.2s;
+    }
+    .floating-inline-arrow:hover {
+        background: #f5b700;
+        color: #000000;
+        border-color: #f5b700;
+    }
+
+    /* Dynamic Dots Navigation */
+    .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+        display: inline-block;
+        cursor: pointer;
+    }
+    .dot.active {
+        background: #f5b700;
+        width: 24px;
+        border-radius: 6px;
+        box-shadow: 0 0 8px rgba(245, 183, 0, 0.5);
+    }
+
+    /* Slider Track Mechanics */
+    .testimonial-slider-viewport {
+        width: 100%;
+        overflow: visible; /* Allows right-hand cards to peek gracefully */
+    }
+    .testimonial-slider-track {
+        display: flex;
+        gap: 20px;
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        will-change: transform;
+    }
+    .testimonial-slide-item {
+        flex: 0 0 100%;
+        min-width: 0;
+    }
+
+    /* Card Specific Accents */
+    .review-card {
+        background: #12141c;
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    .quote-icon {
+        color: rgba(245, 183, 0, 0.12);
+        line-height: 0.5;
+    }
+    .review-text {
+        color: #d1d5db;
+        line-height: 1.6;
+    }
+    .user-avatar {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+    }
+    .user-name {
+        font-size: 0.88rem;
+    }
+    .user-location {
+        font-size: 0.75rem;
+        display: block;
+    }
+    .star-rating-mini {
+        font-size: 0.85rem;
+    }
+
+    /* Multi-column grid breakpoints */
+    @media (min-width: 768px) {
+        .testimonial-slide-item {
+            flex: 0 0 calc(50% - 10px);
+        }
+    }
+    @media (min-width: 1200px) {
+        .testimonial-slide-item {
+            flex: 0 0 calc(33.333% - 13.33px);
+        }
+    }
+</style>
+
+<script>
+    let currentSlideIndex = 0;
+    const track = document.getElementById('testimonialTrack');
+    
+    function getBreakpointItems() {
+        if (window.innerWidth >= 1200) return 3;
+        if (window.innerWidth >= 768) return 2;
+        return 1;
+    }
+
+    function getTotalSteps() {
+        const totalItems = document.querySelectorAll('.testimonial-slide-item').length;
+        return Math.max(1, totalItems - getBreakpointItems() + 1);
+    }
+
+    function initDots() {
+        const dotsContainer = document.getElementById('dotsContainer');
+        dotsContainer.innerHTML = '';
+        const steps = getTotalSteps();
+        
+        for(let i = 0; i < steps; i++) {
+            const dot = document.createElement('span');
+            dot.className = `dot ${i === currentSlideIndex ? 'active' : ''}`;
+            dot.setAttribute('onclick', `goToSlide(${i})`);
+            dotsContainer.appendChild(dot);
+        }
+    }
+
+    function updateSliderPosition() {
+        const itemWidth = document.querySelector('.testimonial-slide-item').offsetWidth;
+        const gap = 20; 
+        const moveAmount = currentSlideIndex * (itemWidth + gap);
+        track.style.transform = `translateX(-${moveAmount}px)`;
+        
+        // Update dots view
+        const dots = document.querySelectorAll('#dotsContainer .dot');
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlideIndex);
+        });
+    }
+
+    function slideTestimonials(direction) {
+        const maxSteps = getTotalSteps();
+        if (direction === 'right') {
+            currentSlideIndex = (currentSlideIndex + 1) % maxSteps;
+        } else {
+            currentSlideIndex = (currentSlideIndex - 1 + maxSteps) % maxSteps;
+        }
+        updateSliderPosition();
+    }
+
+    function goToSlide(index) {
+        currentSlideIndex = index;
+        updateSliderPosition();
+    }
+
+    // Initialize layout and dynamic elements on load and window resize
+    window.addEventListener('DOMContentLoaded', () => {
+        initDots();
+    });
+    window.addEventListener('resize', () => {
+        currentSlideIndex = 0;
+        initDots();
+        updateSliderPosition();
+    });
+</script>
+<div class="app-section-wrapper position-relative overflow-hidden bg-white">
+    
+    <div class="skyline-background-overlay"></div>
+
+    <section class="app-download-section pt-5 pb-4 position-relative z-2">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                
+                <div class="col-md-4 col-lg-3 text-center text-md-start">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=400&auto=format&fit=crop" class="app-mockup-img img-fluid" alt="Mobile App UI">
+                </div>
+
+                <div class="col-md-8 col-lg-5">
+                    <div class="ps-md-2 text-center text-md-start">
+                        <span class="text-uppercase fw-semibold text-gold small d-block mb-1">Book On The Go!</span>
+                        <h2 class="fw-bold text-dark mb-3 fs-2">Download Our App<br>for a Faster Experience</h2>
+                        
+                        <div class="row row-cols-1 row-cols-sm-2 g-2 mb-4 justify-content-center justify-content-md-start">
+                            <div class="col d-flex align-items-center justify-content-center justify-content-md-start gap-2 text-muted small">
+                                <i class="bi bi-check-lg text-gold fw-bold"></i> Quick bookings
+                            </div>
+                            <div class="col d-flex align-items-center justify-content-center justify-content-md-start gap-2 text-muted small">
+                                <i class="bi bi-check-lg text-gold fw-bold"></i> Exclusive offers
+                            </div>
+                            <div class="col d-flex align-items-center justify-content-center justify-content-md-start gap-2 text-muted small">
+                                <i class="bi bi-check-lg text-gold fw-bold"></i> Real-time tracking
+                            </div>
+                            <div class="col d-flex align-items-center justify-content-center justify-content-md-start gap-2 text-muted small">
+                                <i class="bi bi-check-lg text-gold fw-bold"></i> Secure payments
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start">
+                            <a href="#" class="btn-store-badge">
+                                <i class="bi bi-google-play fs-4"></i>
+                                <div>
+                                    <small class="d-block text-uppercase text-muted lh-1">Get it on</small>
+                                    <span class="fw-semibold">Google Play</span>
+                                </div>
+                            </a>
+                            <a href="#" class="btn-store-badge">
+                                <i class="bi bi-apple fs-4"></i>
+                                <div>
+                                    <small class="d-block text-uppercase text-muted lh-1">Download on the</small>
+                                    <span class="fw-semibold">App Store</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-lg-4 text-center text-lg-end position-relative presentation-car-wrapper mt-5 mt-lg-0">
+                    <div class="accent-backdrop-circle"></div>
+                    <img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?q=80&w=600&auto=format&fit=crop" class="presentation-car-img img-fluid" alt="Premium White Sedan Car">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="container position-relative z-3 value-badges-container">
+        <div class="value-badges-card py-4 bg-white">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 justify-content-center">
+                
+                <div class="col border-end-lg text-center text-sm-start d-sm-flex align-items-center gap-3 justify-content-center">
+                    <div class="badge-strip-icon mb-2 mb-sm-0"><i class="bi bi-shield-lock"></i></div>
+                    <div>
+                        <h4 class="fw-bold fs-6 text-dark mb-1">100% Safe & Secure</h4>
+                        <p class="text-muted small mb-0">Your safety is our priority</p>
+                    </div>
+                </div>
+
+                <div class="col border-end-lg text-center text-sm-start d-sm-flex align-items-center gap-3 justify-content-center">
+                    <div class="badge-strip-icon mb-2 mb-sm-0"><i class="bi bi-x-circle"></i></div>
+                    <div>
+                        <h4 class="fw-bold fs-6 text-dark mb-1">Easy Cancellations</h4>
+                        <p class="text-muted small mb-0">Hassle-free cancellations</p>
+                    </div>
+                </div>
+
+                <div class="col border-end-lg text-center text-sm-start d-sm-flex align-items-center gap-3 justify-content-center">
+                    <div class="badge-strip-icon mb-2 mb-sm-0"><i class="bi bi-credit-card"></i></div>
+                    <div>
+                        <h4 class="fw-bold fs-6 text-dark mb-1">Multiple Payment Options</h4>
+                        <p class="text-muted small mb-0">Pay the way you prefer</p>
+                    </div>
+                </div>
+
+                <div class="col text-center text-sm-start d-sm-flex align-items-center gap-3 justify-content-center">
+                    <div class="badge-strip-icon mb-2 mb-sm-0"><i class="bi bi-percent"></i></div>
+                    <div>
+                        <h4 class="fw-bold fs-6 text-dark mb-1">Best Price Guarantee</h4>
+                        <p class="text-muted small mb-0">Get the best rates always</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .app-section-wrapper {
+        background-color: #ffffff;
+    }
+    
+    .text-gold {
+        color: #f5b700 !important;
+    }
+
+    /* Skyline Background Mask */
+    .skyline-background-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80%;
+        background-image: url('https://img.freepik.com/free-vector/skyline-silhouette-illustration_23-2144930938.jpg?q=80&w=1200&auto=format&fit=crop');
+        background-repeat: repeat-x;
+        background-position: bottom center;
+        background-size: contain;
+        opacity: 0.04; /* Keep it subtle just like the design mockup */
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    /* Left Phone Mockup */
+    .app-mockup-img {
+        max-height: 340px;
+        border-radius: 24px;
+        filter: drop-shadow(0 15px 30px rgba(0,0,0,0.12));
+    }
+
+    /* App Badges */
+    .btn-store-badge {
+        background: #000;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: transform 0.2s ease;
+    }
+    .btn-store-badge:hover {
+        transform: scale(1.02);
+        color: #fff;
+    }
+    .btn-store-badge span { font-size: 0.88rem; }
+    .btn-store-badge small { font-size: 0.65rem; }
+
+    /* Interactive Presentation Car Positioning Layout */
+    .presentation-car-wrapper {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        min-height: 260px;
+    }
+
+    /* Yellow Backdrop Crest Circle */
+    .accent-backdrop-circle {
+        position: absolute;
+        width: 260px;
+        height: 260px;
+        background: rgb(245, 183, 0);
+        background: radial-gradient(circle, rgba(245,183,0,0.2) 0%, rgba(245,183,0,0.02) 70%);
+        border-radius: 50%;
+        bottom: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+    }
+
+    /* Car Image Layer handling overlapping */
+    .presentation-car-img {
+        position: relative;
+        z-index: 4; /* Pushes car over background elements */
+        max-height: 190px;
+        object-fit: contain;
+        margin-bottom: -25px; /* Pulls car downward into the cards boundary */
+        filter: drop-shadow(0 15px 15px rgba(0,0,0,0.12));
+    }
+
+    /* Value Badges Block Structure */
+    .value-badges-container {
+        margin-top: 10px;
+        padding-bottom: 40px;
+    }
+    .value-badges-card {
+        border-top: 1px solid #f0f2f5;
+        border-radius: 0;
+        position: relative;
+        z-index: 2; /* Sits beneath the physical car wheels */
+    }
+    .badge-strip-icon {
+        width: 42px;
+        height: 42px;
+        background: #fdf8e6;
+        color: #bfa136;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+    }
+
+    /* Desktop View Optimization Adaptations */
+    @media (min-width: 992px) {
+        .accent-backdrop-circle {
+            width: 320px;
+            height: 320px;
+            bottom: 10%;
+            left: 55%;
+        }
+        .presentation-car-img {
+            max-height: 230px;
+            margin-bottom: -45px; /* Perfect desktop bleed alignment over baseline */
+            transform: scale(1.15);
+        }
+        .border-end-lg {
+            border-right: 1px solid #f0f2f5;
+        }
+    }
+</style>
+
+<footer class="footer-component bg-dark-custom text-white pt-5 pb-3">
+    <div class="container">
+        <div class="row g-4 mb-5">
+            
+            <div class="col-lg-3 col-sm-6">
+                <div class="text-white fw-bold fs-4 d-flex align-items-center gap-2 mb-3">
+                    <span class="text-warning"><i class="bi bi-shield-car"></i></span> Premium
+                </div>
+                <p class="small mb-4" style="line-height: 1.6;">We provide reliable, comfortable and affordable cab services across India.</p>
+                <div class="d-flex gap-2">
+                    <a href="#" class="social-circle-link"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="social-circle-link"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="social-circle-link"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="social-circle-link"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-sm-6 col-6">
+                <h5 class="footer-heading small fw-bold text-uppercase mb-3">Our Services</h5>
+                <ul class="list-unstyled footer-menu-list">
+                    <li><a href="#">Outstation Cabs</a></li>
+                    <li><a href="#">Airport Transfers</a></li>
+                    <li><a href="#">Local Rentals</a></li>
+                    <li><a href="#">Corporate Travel</a></li>
+                    <li><a href="#">Tour Packages</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-sm-6 col-6">
+                <h5 class="footer-heading small fw-bold text-uppercase mb-3">Company</h5>
+                <ul class="list-unstyled footer-menu-list">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Our Fleet</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-sm-6 col-6">
+                <h5 class="footer-heading small fw-bold text-uppercase mb-3">Support</h5>
+                <ul class="list-unstyled footer-menu-list">
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cancellation Policy</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 col-6">
+                <h5 class="footer-heading small fw-bold text-uppercase mb-3">Newsletter</h5>
+                <p class=" small mb-3">Subscribe to get updates & offers.</p>
+                <form class="footer-newsletter-form position-relative">
+                    <input type="email" class="form-control footer-input" placeholder="Enter your email" required>
+                    <button type="submit" class="footer-submit-arrow-btn"><i class="bi bi-arrow-right-short"></i></button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="border-top border-secondary pt-3 text-center">
+            <p class="text-muted small mb-0">&copy; 2026 Premium Cab Services. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* Section Shared Color Properties Setup */
+    .bg-dark-custom {
+        background-color: #0b0c10 !important;
+    }
+    .text-gold {
+        color: #f5b700 !important;
+    }
+
+    /* Testimonials Styles 
+    .nav-arrow-btn {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s;
+    }
+    .nav-arrow-btn:hover {
+        background: #f5b700;
+        color: #000;
+        border-color: #f5b700;
+    }
+    .review-card {
+        background: #12141c;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.02);
+    }
+    .quote-icon {
+        color: rgba(245, 183, 0, 0.15);
+        line-height: 0.5;
+    }
+    .review-text {
+        color: #d1d5db;
+        line-height: 1.5;
+    }
+    .user-avatar {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    .user-name {
+        font-size: 0.85rem;
+    }
+    .user-location {
+        font-size: 0.72rem;
+        display: block;
+    }
+    .star-rating-mini {
+        font-size: 0.8rem;
+    }
+    .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.2);
+    }
+    .dot.active {
+        background: #f5b700;
+        width: 20px;
+        border-radius: 4px;
+    }*/
+
+    /* App Download Section Styles 
+    .app-mockup-img {
+        max-height: 320px;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    .btn-store-badge {
+        background: #000;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: transform 0.2s;
+    }
+    .btn-store-badge:hover {
+        transform: scale(1.02);
+        color: #fff;
+    }
+    .btn-store-badge span {
+        font-size: 0.88rem;
+    }
+    .btn-store-badge small {
+        font-size: 0.65rem;
+    }*/
+
+    /* Horizontal Value Badges strip */
+    .badge-strip-icon {
+        width: 44px;
+        height: 44px;
+        background: #fdf8e6;
+        color: #bfa136;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        flex-shrink: 0;
+    }
+    @media (min-width: 992px) {
+        .border-end-lg {
+            border-end: 1px solid #e2e8f0;
+            border-right: 1px solid #e2e8f0;
+        }
+    }
+
+    /* Footer Styles styling array */
+    .social-circle-link {
+        width: 32px;
+        height: 32px;
+        background: rgba(255,255,255,0.06);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #a0a6b2;
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: all 0.2s;
+    }
+    .social-circle-link:hover {
+        background: #f5b700;
+        color: #000;
+    }
+    .footer-heading {
+        color: #fff;
+        letter-spacing: 0.05em;
+    }
+    .footer-menu-list li {
+        margin-bottom: 8px;
+    }
+    .footer-menu-list a {
+        color: #a0a6b2;
+        text-decoration: none;
+        font-size: 0.82rem;
+        transition: color 0.2s;
+    }
+    .footer-menu-list a:hover {
+        color: #f5b700;
+    }
+    .footer-input {
+        background: rgba(255,255,255,0.05) !important;
+        border: 1px solid rgba(255,255,255,0.1) !important;
+        color: #fff !important;
+        font-size: 0.82rem;
+        padding: 10px 40px 10px 12px;
+        border-radius: 6px;
+    }
+    .footer-input::placeholder {
+        color: #6c757d;
+    }
+    .footer-submit-arrow-btn {
+        position: absolute;
+        right: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #f5b700;
+        border: none;
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        color: #000;
+    }
+</style>
+</body>
+</html>
